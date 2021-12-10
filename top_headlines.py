@@ -4,9 +4,13 @@ import secret
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return '<h1>Welcome!<h1>'
+    
 @app.route('/name/<nm>')
 def hello_name(nm):
-    return render_template('headlines.html', name = nm)
+    return render_template('name.html', name = nm)
 
 @app.route('/headlines/<nm>')
 def page(nm):
